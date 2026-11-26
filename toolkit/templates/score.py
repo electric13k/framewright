@@ -11,7 +11,7 @@ import numpy as np
 SR = 48000
 ep = json.load(open('../hf/episode.json', encoding='utf-8'))
 P = json.load(open('score.json', encoding='utf-8'))
-AMB = Path(P.get('ambience_dir') or os.environ.get('SERIALKILN_AMBIENCE', 'ambience'))
+AMB = Path(os.environ.get('SERIALKILN_AMBIENCE', 'ambience')).resolve()  # from the machine config only, never score.json
 MARKS = dict(ep['marks']); MARKS['end'] = ep['dur']; DUR = float(ep['dur'])
 N = int(SR * DUR); t = np.arange(N) / SR
 
@@ -40,7 +40,11 @@ def ranges(rs, ramp):  # 0..1 gate, 1 inside each [from, to, ramp?]
 
 
 def load(name, offset_s=0.0):  # stereo 48 kHz float at unit RMS, looped with a 1 s crossfade to cover the episode
-    f = AMB / f'{name}.wav'
+    if not re.fullmatch(r'[A-Za-z0-9_-]+', str(name)):
+        sys.exit(f'score.py: bad sound name {name!r}: letters, digits, _ and - only')
+    f = (AMB / f'{name}.wav').resolve()
+    if AMB not in f.parents:
+        sys.exit(f'score.py: {name!r} is outside {AMB}')
     if not f.exists():
         sys.exit(f'score.py: no ambience "{name}" in {AMB}. Have: {", ".join(p.stem for p in AMB.glob("*.wav"))}')
     with wave.open(str(f)) as w:
