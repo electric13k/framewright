@@ -11,7 +11,7 @@ import numpy as np
 SR = 48000
 ep = json.load(open('../hf/episode.json', encoding='utf-8'))
 P = json.load(open('score.json', encoding='utf-8'))
-AMB = Path(os.environ.get('SERIALKILN_AMBIENCE', 'ambience')).resolve()  # from the machine config only, never score.json
+AMB = Path(os.environ.get('FRAMEWRIGHT_AMBIENCE', 'ambience')).resolve()  # from the machine config only, never score.json
 MARKS = dict(ep['marks']); MARKS['end'] = ep['dur']; DUR = float(ep['dur'])
 N = int(SR * DUR); t = np.arange(N) / SR
 

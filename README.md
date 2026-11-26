@@ -1,4 +1,4 @@
-# serialkiln
+# framewright
 
 **A toolkit and agent skill for making episodic 2.5D/3D short-video series (Reels, Shorts, TikTok) from code,
 with faceless characters, locked outfits, synced sound and cold-open hooks, in any art style.**
@@ -54,23 +54,23 @@ went wrong there.
 ## Quick start
 
 ```bash
-git clone https://github.com/electric13k/serialkiln
-cp serialkiln/toolkit/kit.config.example.json serialkiln/toolkit/kit.config.json   # set your tool paths
+git clone https://github.com/electric13k/framewright
+cp framewright/toolkit/kit.config.example.json framewright/toolkit/kit.config.json   # set your tool paths
 
 # as a Claude Code skill
-cp -r serialkiln ~/.claude/skills/serialkiln
+cp -r framewright ~/.claude/skills/framewright
 
 # a new series
-mkdir -p ~/series/myshow && cp serialkiln/series/_template/* ~/series/myshow/
+mkdir -p ~/series/myshow && cp framewright/series/_template/* ~/series/myshow/
 # edit bible.md, series.json; fill cast.js; render the cast sheet (references/characters.md)
 ```
 
 Building one episode:
 
 ```bash
-<kokoro_python> serialkiln/toolkit/voice_kokoro.py ~/series/myshow/ep01
-python serialkiln/toolkit/build.py ~/series/myshow/ep01 --from gen
-python serialkiln/toolkit/keyframes.py ~/series/myshow/ep01/out/body.mp4
+<kokoro_python> framewright/toolkit/voice_kokoro.py ~/series/myshow/ep01
+python framewright/toolkit/build.py ~/series/myshow/ep01 --from gen
+python framewright/toolkit/keyframes.py ~/series/myshow/ep01/out/body.mp4
 ```
 
 ## Sound credits

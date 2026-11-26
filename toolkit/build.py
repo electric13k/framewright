@@ -201,7 +201,7 @@ class Episode:
         return f'{self.picture} ({d:.2f} s)'
 
     def score(self):
-        out = run([sys.executable, 'score.py'], self.audio, self.logs / 'score.log', env={'SERIALKILN_AMBIENCE': P['ambience_dir']}, timeout=900)
+        out = run([sys.executable, 'score.py'], self.audio, self.logs / 'score.log', env={'FRAMEWRIGHT_AMBIENCE': P['ambience_dir']}, timeout=900)
         return out.strip().splitlines()[-1]
 
     def cues(self):

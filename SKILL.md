@@ -1,9 +1,9 @@
 ---
-name: serialkiln
+name: framewright
 description: Plan, script, build and review an episodic 2.5D/3D short-video series (Reels, Shorts, TikTok) with faceless characters, locked outfits, synced sound and a cold-open hook, in any art style. Use when asked to start a new series, write a series bible or episode scripts, make a sample episode, build or rebuild an episode, add sound effects in sync, make a title card, or review an episode cheaply by its cuts.
 ---
 
-# serialkiln
+# framewright
 
 A pipeline for faceless episodic shorts rendered from code (three.js scenes rendered by HyperFrames), voiced locally
 (Kokoro), scored and mixed from local CC0 libraries, and reviewed by scene cuts instead of by every frame.
