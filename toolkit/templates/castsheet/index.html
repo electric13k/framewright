@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      html, body { margin: 0; width: 1920px; height: 1080px; background: #0b0f14; overflow: hidden; }
+      #names { position: absolute; left: 0; right: 0; bottom: 40px; display: flex; justify-content: space-around; color: #f1eee9; font: 700 34px Inter, sans-serif; }
+    </style>
+  </head>
+  <body>
+    <!-- Cast sheet: every character in cast.js from 4 angles. Snapshot it once per cast change and keep cast/sheet.png:
+         npx hyperframes snapshot . --at 0.5 --no-end -o ../cast -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="1" data-width="1920" data-height="1080">
+      <canvas id="sheet" data-layout-allow-overflow width="1920" height="1080"></canvas>
+      <div id="names"></div>
+    </div>
+    <script type="module">
+      import * as THREE from './assets/vendor/three.module.js';
+      import { CAST } from './assets/js/cast.js';
+      import { figure, pose } from './assets/js/figure.js';
+      const ids = Object.keys(CAST);
+      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('sheet'), antialias: true, preserveDrawingBuffer: true });
+      renderer.setSize(1920, 1080, false);
+      const scene = new THREE.Scene(); scene.background = new THREE.Color('#1a222c');
+      const cols = ids.length * 4, hw = cols * 0.45, hh = Math.max(1.25, hw * 9 / 16), cam = new THREE.OrthographicCamera(-hw, hw, hh, -hh, 0.1, 50);
+      cam.position.set(0, 0.95, 10); scene.add(cam);
+      ids.forEach((id, i) => [0, Math.PI / 2, Math.PI, -Math.PI / 2].forEach((ry, j) => {
+        const f = figure(id); pose(f, { armL: 0.25, armR: -0.25 });
+        f.rotation.y = ry; f.position.x = (i * 4 + j - cols / 2 + 0.5) * 0.9; scene.add(f);
+      }));
+      document.getElementById('names').innerHTML = ids.map((id) => `<span>${id}</span>`).join('');
+      const draw = () => renderer.render(scene, cam);
+      window.addEventListener('hf-seek', draw); draw();
+    </script>
+    <script>
+      const tl = gsap.timeline({ paused: true }); tl.to({}, { duration: 1 });
+      window.__timelines = window.__timelines || {}; window.__timelines['main'] = tl;
+    </script>
+  </body>
+</html>

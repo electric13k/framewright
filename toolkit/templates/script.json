@@ -1,0 +1,132 @@
+{
+ "episode": 0,
+ "title": "TODO title, two to four words",
+ "previous_choice": {
+  "ask": "TODO the last card's question",
+  "right": "TODO A or B",
+  "right_label": "TODO",
+  "wrong": "TODO A or B",
+  "wrong_label": "TODO",
+  "lesson": "TODO the rule the wrong turn breaks"
+ },
+ "start": 0.15,
+ "tail": 0.25,
+ "lines": [
+  {
+   "text": "If you chose TODO wrong label:",
+   "who": "narrator",
+   "mark": "wrong",
+   "fx": [
+    {
+     "at": 0,
+     "tag": "move",
+     "what": "TODO whip into the wrong turn",
+     "sound": "whoosh",
+     "weight": "support"
+    }
+   ]
+  },
+  {
+   "text": "TODO it goes badly, fast",
+   "who": "narrator"
+  },
+  {
+   "text": "TODO the hard stop",
+   "who": "narrator",
+   "mark": "wrongEnd",
+   "fx": [
+    {
+     "at": 0.3,
+     "tag": "cut",
+     "what": "TODO the hit",
+     "sound": "boom",
+     "weight": "hero",
+     "stop_before": true
+    },
+    {
+     "at": 0.9,
+     "tag": "move",
+     "what": "rewind to the choice",
+     "sound": "reverse",
+     "weight": "hero"
+    }
+   ]
+  },
+  {
+   "text": "If you chose TODO right label:",
+   "who": "narrator",
+   "mark": "open",
+   "fx": [
+    {
+     "at": 0,
+     "tag": "move",
+     "what": "TODO whip into the first shot",
+     "sound": "whoosh",
+     "weight": "support"
+    }
+   ]
+  },
+  {
+   "text": "TODO a major event",
+   "who": "narrator",
+   "mark": "event1",
+   "fx": [
+    {
+     "at": 0.1,
+     "tag": "land",
+     "what": "TODO the event lands",
+     "sound": "hit+boom",
+     "weight": "hero",
+     "stop_before": true,
+     "build": true
+    }
+   ]
+  },
+  {
+   "text": "TODO a spoken line",
+   "who": "mum",
+   "style": "q"
+  },
+  {
+   "text": "A: TODO option A, said as an action.",
+   "who": "narrator",
+   "mark": "optA"
+  },
+  {
+   "text": "TODO why A: where he would go and why",
+   "who": "narrator"
+  },
+  {
+   "text": "B: TODO option B, said as an action.",
+   "who": "narrator",
+   "mark": "optB"
+  },
+  {
+   "text": "TODO why B: where he would go and why",
+   "who": "narrator"
+  },
+  {
+   "text": "Comment A or B. Tomorrow, we find out.",
+   "who": "narrator"
+  }
+ ],
+ "choice": {
+  "ask": "What should they do?",
+  "right": "TODO A or B",
+  "A": {
+   "label": "TODO 1-3 words",
+   "why": "TODO the reason, max 28 characters"
+  },
+  "B": {
+   "label": "TODO 1-3 words",
+   "why": "TODO the reason, max 28 characters"
+  }
+ },
+ "threads_opened": [],
+ "threads_closed": [],
+ "suggestions_used": [],
+ "next": {
+  "right": "TODO one sentence: the right path in the next episode",
+  "wrong_turn": "TODO one sentence: the wrong answer's short bad outcome"
+ }
+}

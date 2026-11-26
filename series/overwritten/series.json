@@ -1,0 +1,18 @@
+{
+ "name": "OVERWRITTEN",
+ "season": 1,
+ "interactive": true,
+ "length_s": [45, 75],
+ "voices": {
+  "narrator": ["am_michael", 1.1],
+  "text": ["am_michael", 1.1],
+  "ilo": ["am_puck", 1.0],
+  "mum": ["af_heart", 1.0],
+  "tam": ["am_liam", 1.0],
+  "dox": ["bm_george", 0.95],
+  "mae": ["af_sarah", 1.0]
+ },
+ "fake_level": 0.3,
+ "pauses": {",": 0.16, ";": 0.22, ":": 0.28, ".": 0.28, "!": 0.28, "?": 0.28, "-": 0.35},
+ "caption_top_px": 1480
+}

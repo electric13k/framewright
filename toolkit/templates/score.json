@@ -1,0 +1,9 @@
+{
+ "_help": "music: one continuous bed for the whole episode (a file in ambience_dir, e.g. music-dark). drone.level: [time or mark, gain] curve. hush: planned silences [from, to]. heart: [from, to, 'slow'|'fast', level]. Times can be numbers or marks like 'cliff' or 'open+0.4'.",
+ "music": {"name": "music-dark", "level": 0.7},
+ "beds": [],
+ "drone": {"name": "drone-dark", "level": [[0, 0.2], ["end", 0.45]]},
+ "hush": [],
+ "hush_cut": 0.8,
+ "heart": []
+}

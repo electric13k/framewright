@@ -1,0 +1,15 @@
+{
+ "name": "SERIESNAME",
+ "season": 1,
+ "interactive": true,
+ "length_s": [45, 75],
+ "voices": {
+  "narrator": ["am_michael", 1.1],
+  "text": ["am_michael", 1.1],
+  "hero": ["am_puck", 1.0],
+  "mother": ["af_heart", 1.0]
+ },
+ "fake_level": 0.3,
+ "pauses": {",": 0.16, ";": 0.22, ":": 0.28, ".": 0.28, "!": 0.28, "?": 0.28, "-": 0.35},
+ "caption_top_px": 1480
+}

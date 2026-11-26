@@ -1,0 +1,17 @@
+{
+ "_help": "Copy to kit.config.json and fill in your paths. Empty tool paths are looked up on PATH.",
+ "ffmpeg": "",
+ "ffprobe": "",
+ "system_python": "",
+ "kokoro_dir": "~/tools/tts/kokoro",
+ "kokoro_python": "~/tools/tts/kokoro/.venv/bin/python",
+ "sound_layer": "~/tools/sfx/opus-sound-layer",
+ "sfx_extra": "~/tools/sfx/kit2",
+ "ambience_dir": "~/tools/sfx/ambience",
+ "lemo": "~/lemo-opuscar",
+ "hyperframes": "hyperframes@0.9.31",
+ "render_workers": 3,
+ "fps": 30,
+ "phone_max_mb": 30,
+ "phone_kbps": 2900
+}
